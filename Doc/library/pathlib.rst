@@ -555,6 +555,16 @@ Pure paths provide the following methods and properties:
           .format(str(self), str(formatted)))
       ValueError: '/etc/passwd' is not in the subpath of '/usr' OR one path is relative and the other absolute.
 
+      >>> p = PurePosixPath('/tmp/foo/bar')
+      >>> p.relative_to('/tmp', 'foo')
+      PurePosixPath('bar')
+      >>> p.relative_to('/tmp', 'bar')
+      Traceback (most recent call last):
+        File "<stdin>", line 1, in <module>
+        File "pathlib.py", line 816, in relative_to
+          raise ValueError("{!r} is not in the subpath of {!r}"
+      ValueError: '/tmp/foo/bar' is not in the subpath of '/tmp/bar' OR one path is relative and the other is absolute.
+
    NOTE: This function is part of :class:`PurePath` and works with strings. It does not check or access the underlying file structure.
 
 
