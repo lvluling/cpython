@@ -542,10 +542,8 @@ Pure paths provide the following methods and properties:
 
    Return the relative path to another path identified by *other*, each
    element of *other* can be either a string representing a path segment,
-   an object implementing the :class:`os.PathLike` interface which returns
-   a string, or another path object implementing the :class:`PurePath` or
-   a subclass of :class:`PurePath`.
-   If the operation is impossible, ValueError is raised::
+   or another path object implementing the :class:`PurePath` ora subclass
+   of :class:`PurePath`. If the operation is impossible, ValueError is raised::
 
       >>> p = PurePosixPath('/etc/passwd')
       >>> p.relative_to('/')
